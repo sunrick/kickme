@@ -1,0 +1,46 @@
+{
+  "england" : {
+    "web_entry" : "englandm.php",
+    "leagues" : [
+      "Premier League",
+      "Championship",
+      "League 1",
+      "League 2",
+      "Conference"
+    ]
+  },
+  "france" : {
+    "web_entry" : "francem.php",
+    "leagues" : [
+      "Le Championnat",
+      "Division 2"
+    ]
+  },
+  "spain" : {
+    "web_entry" : "spainm.php",
+    "leagues" : [
+      "La Liga Primera Division",
+      "La Liga Segunda Division"
+    ]
+  },
+  "germany" : {
+    "web_entry" : "germanym.php",
+    "leagues" : [
+      "Bundesliga 1",
+      "Bundesliga 2"
+    ]
+  },
+  "italy" : {
+    "web_entry" : "italym.php",
+    "leagues" : [
+      "Serie A",
+      "Serie B"
+    ]
+  },
+  "netherlands" : {
+    "web_entry" : "netherlandsm.php",
+    "leagues" : [
+      "Eredivisie"
+    ]
+  }
+}

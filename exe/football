@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'football'
+require 'thor'
+
+class FootballCLI < Thor
+  option :countries, :type => :array
+  desc "download", "Download an entire country or countries. Downloads all if none specified."
+  def download
+    Football::CSVDownloader.download(options)
+  end
+
+end
+
+FootballCLI.start(ARGV)
