@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'football'
 require 'thor'
@@ -10,6 +8,11 @@ class FootballCLI < Thor
   desc "download", "Download an entire country or countries. Downloads all if none specified."
   def download
     Football::CSVDownloader.download(options)
+  end
+
+  desc "combine", "Combine all CSV files into one file."
+  def combine
+    Football::CSVCombiner.combine
   end
 
 end

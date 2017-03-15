@@ -33,6 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "thor", "~> 0.19.4"
   spec.add_dependency "nokogiri", "~> 1.7.0.1"
   spec.add_dependency "pry", "~> 0.10.4"
+  spec.add_dependency "smarter_csv", "~> 1.1.4"
 
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "rake", "~> 10.0"

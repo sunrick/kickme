@@ -1,46 +1,61 @@
 {
-  "england" : {
-    "web_entry" : "englandm.php",
-    "leagues" : [
-      "Premier League",
-      "Championship",
-      "League 1",
-      "League 2",
-      "Conference"
-    ]
+  "countries" : {
+
+    "england" : {
+      "web_entry" : "englandm.php",
+      "leagues" : [
+        "Premier League",
+        "Championship",
+        "League 1",
+        "League 2",
+        "Conference"
+      ]
+    },
+    "france" : {
+      "web_entry" : "francem.php",
+      "leagues" : [
+        "Le Championnat",
+        "Division 2"
+      ]
+    },
+    "spain" : {
+      "web_entry" : "spainm.php",
+      "leagues" : [
+        "La Liga Primera Division",
+        "La Liga Segunda Division"
+      ]
+    },
+    "germany" : {
+      "web_entry" : "germanym.php",
+      "leagues" : [
+        "Bundesliga 1",
+        "Bundesliga 2"
+      ]
+    },
+    "italy" : {
+      "web_entry" : "italym.php",
+      "leagues" : [
+        "Serie A",
+        "Serie B"
+      ]
+    },
+    "netherlands" : {
+      "web_entry" : "netherlandsm.php",
+      "leagues" : [
+        "Eredivisie"
+      ]
+    }
   },
-  "france" : {
-    "web_entry" : "francem.php",
-    "leagues" : [
-      "Le Championnat",
-      "Division 2"
-    ]
-  },
-  "spain" : {
-    "web_entry" : "spainm.php",
-    "leagues" : [
-      "La Liga Primera Division",
-      "La Liga Segunda Division"
-    ]
-  },
-  "germany" : {
-    "web_entry" : "germanym.php",
-    "leagues" : [
-      "Bundesliga 1",
-      "Bundesliga 2"
-    ]
-  },
-  "italy" : {
-    "web_entry" : "italym.php",
-    "leagues" : [
-      "Serie A",
-      "Serie B"
-    ]
-  },
-  "netherlands" : {
-    "web_entry" : "netherlandsm.php",
-    "leagues" : [
-      "Eredivisie"
-    ]
-  }
+  "fields" : [
+    "Season", "Country", "League", "Div", "Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR",
+    "HTHG", "HTAG", "HTR", "Referee", "HS", "AS", "HST", "AST",
+    "HF", "AF", "HC", "AC", "HY", "AY", "HR", "AR", "B365H", "B365D",
+    "B365A", "BWH", "BWD", "BWA", "IWH", "IWD", "IWA", "LBH", "LBD",
+    "LBA", "PSH", "PSD", "PSA", "WHH", "WHD", "WHA", "VCH", "VCD",
+    "VCA", "Bb1X2", "BbMxH", "BbAvH", "BbMxD", "BbAvD",
+    "BbMxA", "BbAvA", "BbOU", "BbMx>2.5", "BbAv>2.5", "BbMx<2.5",
+    "BbAv<2.5", "BbAH", "BbAHh", "BbMxAHH", "BbAvAHH", "BbMxAHA",
+    "BbAvAHA", "PSCH", "PSCD", "PSCA"
+  ]
+
 }

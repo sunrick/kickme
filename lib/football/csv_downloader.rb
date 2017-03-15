@@ -4,9 +4,9 @@ module Football
     def self.download(options = {})
       base_uri = "http://www.football-data.co.uk"
       config = Football.config
-      country_names = options["countries"].nil? ? config.keys : options["countries"]
+      country_names = options["countries"].nil? ? config["countries"].keys : options["countries"]
       country_names.each do |country_name|
-        country = config[country_name]
+        country = config["countries"][country_name]
         website = open("#{base_uri}/#{country["web_entry"]}")
         doc = Nokogiri::HTML(website)
         country["leagues"].each do |league|
