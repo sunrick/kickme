@@ -8,6 +8,16 @@ To download over 100k fixture data all in one file, download `csv/all.csv`.
 
 If you want to pull down data on your own for whatever reason see below!
 
+## Note about data
+
+Data for different seasons vary, i.e. some columns are present while others aren't. The `csv/all.csv` file normalizes all seasons to just have blanks for missing data.
+
+None of the data has been checked for accuracy and any errors present comes from source.
+
+Checkout the glossary of each data field [here](http://www.football-data.co.uk/notes.txt).
+
+I've added 3 extra fields for season, league, and country for `csv/all.csv`.
+
 ## Installation
 
 Add this line to your application's Gemfile:
