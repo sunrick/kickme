@@ -45,9 +45,17 @@ To fetch latest data for all countries in config.json:
 
 `bundle exec kickme download`
 
-To download latest data for specific countries:
+To download all data for specific countries:
 
-`bundle exec kickme --countries spain england france`
+`bundle exec kickme download --countries spain england france`
+
+To download data for a specific league:
+
+`bundle exec kickme download --countries spain --leagues "La Liga Primera Division"`
+
+To download data for a specific season:
+
+`bundle exec kickme download --seasons "2016/2017"`
 
 Please don't do this too often or at all... Don't want to mess with the person's server.
 
