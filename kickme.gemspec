@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Download data from football data uk}
   spec.description   = %q{Download data from football data uk}
-  spec.homepage      = "https:/github.com/sunrick/kickme"
+  spec.homepage      = "https://github.com/sunrick/kickme"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
