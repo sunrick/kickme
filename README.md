@@ -1,8 +1,12 @@
 # Kickme
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kickme`. To experiment with that code, run `bin/console` for an interactive prompt.
+Just some code I've written that pulls historical match data from leagues available on football-data.co.uk. Eventually this data will power either an API or site that people can use.
 
-TODO: Delete this and the text above, and describe your gem
+To download individual CSVs go to `csv` folder and have a look around and choose what you want.
+
+To download over 100k fixture data all in one file, download `csv/all.csv`.
+
+If you want to pull down data on your own for whatever reason see below!
 
 ## Installation
 
@@ -22,7 +26,35 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+If you've installed the gem globally you do not need to prepend following commands with `bundle exec`.
+
+
+### Download data
+
+To fetch latest data for all countries in config.json:
+
+`bundle exec kickme download`
+
+To download latest data for specific countries:
+
+`bundle exec kickme --countries spain england france`
+
+Please don't do this too often or at all... Don't want to mess with the person's server.
+
+
+### Combine data
+
+To combine all csv files:
+
+`bundle exec kickme combine`
+
+This command deletes previous `csv/all.csv` and replaces it with all new data.
+
+If you want to only have a subset of fields, checkout of `config.json` and remove whatever fields you don't want.
+
+### Data is version controlled
+
+Data is versioned controlled just so that it shows up on Github for people to download. Feel free to ignore it in your own project.
 
 ## Development
 
