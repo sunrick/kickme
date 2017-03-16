@@ -2,30 +2,55 @@ module Kickme
   class CSVDownloader
 
     def self.download(options = {})
-      base_uri = "http://www.football-data.co.uk"
-      config = Kickme.config
-      country_names = options["countries"].nil? ? config["countries"].keys : options["countries"]
-      country_names.each do |country_name|
-        country = config["countries"][country_name]
-        website = open("#{base_uri}/#{country["web_entry"]}")
-        doc = Nokogiri::HTML(website)
-        country["leagues"].each do |league|
-          cleaned_league = league.gsub(' ', '_').downcase
-          premier_league_links = doc.css("a:contains(\"#{league}\")")
-          premier_league_links.each do |link|
-            previous_element = link.previous
-            until previous_element.text.include?("Season")
-              previous_element = previous_element.previous
-            end
-            season = previous_element.text.gsub(' ', '_').gsub('/', '-').downcase
-            directory_path = "./csv/#{country_name}/#{cleaned_league}"
-            FileUtils::mkdir_p(directory_path) if !File.exists?(directory_path)
-            file = open("#{base_uri}/#{link.attributes["href"].value}")
-            IO.copy_stream(file, "#{directory_path}/#{season}.csv")
+      countries = [options["countries"] || Kickme.country_names].flatten.compact.uniq
+      countries.each do |country|
+        web_page = Kickme.country_page(country)
+        leagues = leagues_for_country(country, options["leagues"])
+        leagues.each do |league|
+          seasons = seasons_for_league(league, options["seasons"], web_page)
+          seasons.each do |season|
+            sd = SeasonDownloader.new(
+              country: country,
+              league: league,
+              season: season,
+              web_page: web_page
+            )
+            sd.download
           end
         end
       end
     end
 
+    private
+
+      def self.seasons_for_league(league, optional_seasons, web_page)
+        league_csv_links = web_page.css("a:contains(\"#{league}\")")
+        seasons = league_csv_links.map do |league_csv_link|
+          season = league_csv_link.previous
+          until season.text.include?("Season")
+            season = season.previous
+          end
+          season.text.gsub("Season ", "")
+        end
+        if optional_seasons
+          optional_seasons = [optional_seasons].flatten.compact.uniq
+          optional_seasons.select { |season| seasons.include?(season) }
+        else
+          seasons
+        end
+      end
+
+      def self.leagues_for_country(country, optional_leagues)
+        kickme_leagues = Kickme.leagues_for(country)
+        if optional_leagues
+          optional_leagues = [optional_leagues].flatten.compact.uniq
+          optional_leagues.select { |league| kickme_leagues.include?(league) }
+        else
+          kickme_leagues
+        end
+      end
+
   end
+
 end
+

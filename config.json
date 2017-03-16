@@ -1,7 +1,7 @@
 {
-  "countries" : {
-
-    "england" : {
+  "countries" : [
+    {
+      "name" : "England",
       "web_entry" : "englandm.php",
       "leagues" : [
         "Premier League",
@@ -11,41 +11,46 @@
         "Conference"
       ]
     },
-    "france" : {
+    {
+      "name" : "France",
       "web_entry" : "francem.php",
       "leagues" : [
         "Le Championnat",
         "Division 2"
       ]
     },
-    "spain" : {
+    {
+      "name" : "Spain",
       "web_entry" : "spainm.php",
       "leagues" : [
         "La Liga Primera Division",
         "La Liga Segunda Division"
       ]
     },
-    "germany" : {
+    {
+      "name" : "Germany",
       "web_entry" : "germanym.php",
       "leagues" : [
         "Bundesliga 1",
         "Bundesliga 2"
       ]
     },
-    "italy" : {
+    {
+      "name" : "Italy",
       "web_entry" : "italym.php",
       "leagues" : [
         "Serie A",
         "Serie B"
       ]
     },
-    "netherlands" : {
+    {
+      "name" : "netherlands",
       "web_entry" : "netherlandsm.php",
       "leagues" : [
         "Eredivisie"
       ]
     }
-  },
+  ],
   "fields" : [
     "Season", "Country", "League", "Div", "Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR",
     "HTHG", "HTAG", "HTR", "Referee", "HS", "AS", "HST", "AST",

@@ -5,6 +5,8 @@ require 'thor'
 
 class KickmeCLI < Thor
   option :countries, :type => :array
+  option :leagues, :type => :array
+  option :seasons, :type => :array
   desc "download", "Download an entire country or countries. Downloads all if none specified."
   def download
     Kickme::CSVDownloader.download(options)
