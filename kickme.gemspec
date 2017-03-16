@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'football/version'
+require 'kickme/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "football"
-  spec.version       = Football::VERSION
+  spec.name          = "kickme"
+  spec.version       = Kickme::VERSION
   spec.authors       = ["Rickard Sunden"]
   spec.email         = ["rickard.sunden@outlook.com"]
 
@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = "exe"
-  spec.executables   = ['football']
+  spec.executables   = ['kickme']
   spec.require_paths = ["lib"]
 
   spec.add_dependency "thor", "~> 0.19.4"

@@ -1,20 +1,20 @@
 #!/usr/bin/env ruby
 
-require 'football'
+require 'kickme'
 require 'thor'
 
-class FootballCLI < Thor
+class KickmeCLI < Thor
   option :countries, :type => :array
   desc "download", "Download an entire country or countries. Downloads all if none specified."
   def download
-    Football::CSVDownloader.download(options)
+    Kickme::CSVDownloader.download(options)
   end
 
   desc "combine", "Combine all CSV files into one file."
   def combine
-    Football::CSVCombiner.combine
+    Kickme::CSVCombiner.combine
   end
 
 end
 
-FootballCLI.start(ARGV)
+KickmeCLI.start(ARGV)

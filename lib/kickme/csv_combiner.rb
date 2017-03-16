@@ -1,12 +1,12 @@
-module Football
+module Kickme
   class CSVCombiner
 
     def self.combine
-      config = Football.config
+      config = Kickme.config
       country_names = config["countries"].keys
       fields = config["fields"]
 
-      CSV.open("#{Football.root}/csv/all.csv", "w") do |csv|
+      CSV.open("#{Kickme.root}/csv/all.csv", "w") do |csv|
         csv << fields
       end
 
@@ -14,7 +14,7 @@ module Football
         country = config["countries"][country_name]
         country["leagues"].each do |league|
           cleaned_league = league.gsub(' ', '_').downcase
-          files = Dir.glob("#{Football.root}/csv/#{country_name}/#{cleaned_league}/*")
+          files = Dir.glob("#{Kickme.root}/csv/#{country_name}/#{cleaned_league}/*")
           files.each do |file|
             season = File.basename(file, ".csv")
             lines = SmarterCSV.process(file, keep_original_headers: true, force_utf8: true)
@@ -34,7 +34,7 @@ module Football
               lines[index] = new_line
             end
 
-            CSV.open("#{Football.root}/csv/all.csv", "a+") do |csv|
+            CSV.open("#{Kickme.root}/csv/all.csv", "a+") do |csv|
               lines.each do |line|
                 csv << line.values
               end

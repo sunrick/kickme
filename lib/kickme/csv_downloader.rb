@@ -1,9 +1,9 @@
-module Football
+module Kickme
   class CSVDownloader
 
     def self.download(options = {})
       base_uri = "http://www.football-data.co.uk"
-      config = Football.config
+      config = Kickme.config
       country_names = options["countries"].nil? ? config["countries"].keys : options["countries"]
       country_names.each do |country_name|
         country = config["countries"][country_name]
