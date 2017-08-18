@@ -26,6 +26,10 @@ module Kickme
     "http://www.football-data.co.uk"
   end
 
+  def self.fields
+    config["fields"]
+  end
+
   def self.country_page(country_name)
     country_name = country_name.capitalize # frozen string error from thor
     country_url = countries.detect { |country| country["name"] == country_name }["web_entry"]
